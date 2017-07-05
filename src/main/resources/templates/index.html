@@ -7,6 +7,7 @@
     <link href="/main.css" rel="stylesheet" />
 </head>
 <body>
+    <h3 th:if="${#vars['flash.message']}" th:text="${#vars['flash.message']}" class="alert alert-info" role="alert"/>
     <div>
         <h3 th:text="${page.number + 1} + ' of ' + ${page.totalPages}" />
         <table class="table">
@@ -24,12 +25,16 @@
                     <td th:text="${image.name}"/>
                     <td>
                         <a href="#" class="thumbnail">
-                            <img th:src="@{'/images/' + ${image.name} + '/raw'}" />
+                            <img th:src="@{'/api/images/' + ${image.name} + '/raw'}" />
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <form method="post" enctype="multipart/form-data" action="/images">
+            <p><input type="file" name="file" /></p>
+            <p><input type="submit" value="Upload" /></p>
+        </form>
     </div>
 </body>
 </html>
