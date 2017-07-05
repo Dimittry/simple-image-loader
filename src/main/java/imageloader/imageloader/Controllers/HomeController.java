@@ -54,4 +54,17 @@ public class HomeController {
 
         return "redirect:/";
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = BASE_PATH + "/" + FILENAME)
+    public String deleteFile(@PathVariable String filename,
+                                        RedirectAttributes redirectAttributes) {
+        try {
+            imageService.deleteImage(filename);
+            redirectAttributes.addFlashAttribute("flash.message", "Successfully deleted " + filename);
+        } catch (IOException e) {
+            redirectAttributes.addFlashAttribute("flash.message", "Failed to delete "
+                    + filename + " => " + e.getMessage());
+        }
+        return "redirect:/";
+    }
 }

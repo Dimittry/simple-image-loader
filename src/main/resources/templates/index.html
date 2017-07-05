@@ -28,6 +28,11 @@
                             <img th:src="@{'/api/images/' + ${image.name} + '/raw'}" />
                         </a>
                     </td>
+                    <td>
+                        <form th:action="@{'/images/' + ${image.name}}" th:method="delete">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
