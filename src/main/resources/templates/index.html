@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmyeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Image loader</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link href="/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h3 th:text="${page.number + 1} + ' of ' + ${page.totalPages}" />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="image : ${page.content}">
+                    <td th:text="${image.id}"/>
+                    <td th:text="${image.name}"/>
+                    <td>
+                        <a href="#" class="thumbnail">
+                            <img th:src="@{'/images/' + ${image.name} + '/raw'}" />
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
