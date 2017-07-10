@@ -149,57 +149,20 @@
 
     <build>
        <plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <outputDirectory>target</outputDirectory>
-              		  <warName>ROOT</warName>
-                </configuration>
-            </plugin>
-		</plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+		<plugin>
+                	<groupId>org.apache.maven.plugins</groupId>
+                	<artifactId>maven-war-plugin</artifactId>
+                	<version>2.3</version>
+                	<configuration>
+                		<failOnMissingWebXml>false</failOnMissingWebXml>
+                   		<outputDirectory>target</outputDirectory>
+              	  		<warName>ROOT</warName>
+                	</configuration>
+            	</plugin>
+	</plugins>
     </build>
-
-    <!--<profiles>-->
-        <!--<profile>-->
-            <!--&lt;!&ndash; When built in OpenShift the 'openshift' profile will be used when invoking mvn. &ndash;&gt;-->
-            <!--&lt;!&ndash; Use this profile for any OpenShift specific customization your app will need. &ndash;&gt;-->
-            <!--&lt;!&ndash; By default that is to put the resulting archive into the 'deployments' folder. &ndash;&gt;-->
-            <!--&lt;!&ndash; http://maven.apache.org/guides/mini/guide-building-for-different-environments.html &ndash;&gt;-->
-            <!--<id>openshift</id>-->
-            <!--<build>-->
-                <!--<finalName>imageloader</finalName>-->
-                <!--<plugins>-->
-                    <!--&lt;!&ndash;<plugin>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<artifactId>maven-war-plugin</artifactId>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<version>2.3</version>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<failOnMissingWebXml>false</failOnMissingWebXml>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<outputDirectory>target</outputDirectory>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<warName>ROOT</warName>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</plugin>&ndash;&gt;-->
-                    <!--<plugin>-->
-                        <!--<groupId>org.wildfly.plugins</groupId>-->
-                        <!--<artifactId>wildfly-maven-plugin</artifactId>-->
-                        <!--<version>1.1.0.Alpha5</version>-->
-                        <!--<configuration>-->
-                            <!--&lt;!&ndash;<hostname>127.0.0.1</hostname>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<port>9990</port>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<username>mkyong</username>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<password>password</password>&ndash;&gt;-->
-                            <!--<name>imageloader.war</name>-->
-                        <!--</configuration>-->
-                    <!--</plugin>-->
-                <!--</plugins>-->
-            <!--</build>-->
-        <!--</profile>-->
-    <!--</profiles>-->
 </project>
