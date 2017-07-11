@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ImageLoaderApplication /*extends SpringBootServletInitializer*/ {
 
-	@Bean
+	/*@Bean
 	public ServletRegistrationBean camelServletRegistrationBean() {
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean(
 				new CamelHttpTransportServlet(), "/api/*"
 		);
 		registrationBean.setName("CamelServlet");
 		return registrationBean;
-	}
+	}*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(ImageLoaderApplication.class, args);
