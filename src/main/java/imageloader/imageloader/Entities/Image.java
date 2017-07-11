@@ -1,13 +1,13 @@
 package imageloader.imageloader.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Image {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AppImageIdSequence")
+    @SequenceGenerator(name = "AppImageIdSequence", sequenceName = "users_seq_gen_users_id_seq_seq")
     private Long id;
 
     private String name;

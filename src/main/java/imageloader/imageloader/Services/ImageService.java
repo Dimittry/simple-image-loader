@@ -64,15 +64,15 @@ public class ImageService {
         return (args) -> {
             FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
             Files.createDirectory(Paths.get(UPLOAD_ROOT));
-
-            FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/test"));
-            imageRepository.save(new Image("test"));
-
-            FileCopyUtils.copy("Test file 1", new FileWriter(UPLOAD_ROOT + "/test2"));
-            imageRepository.save(new Image("test2"));
-
-            FileCopyUtils.copy("Test file 3", new FileWriter(UPLOAD_ROOT + "/test3"));
-            imageRepository.save(new Image("test3"));
+//
+//            FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/test"));
+//            imageRepository.save(new Image("test"));
+//
+//            FileCopyUtils.copy("Test file 1", new FileWriter(UPLOAD_ROOT + "/test2"));
+//            imageRepository.save(new Image("test2"));
+//
+//            FileCopyUtils.copy("Test file 3", new FileWriter(UPLOAD_ROOT + "/test3"));
+//            imageRepository.save(new Image("test3"));
         };
     }
 }
